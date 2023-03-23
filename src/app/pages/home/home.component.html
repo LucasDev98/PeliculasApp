@@ -1,1 +1,8 @@
-<p>home works!</p>
+
+
+<h1>Cartelera</h1>
+<app-slide-show  *ngIf="movies.length > 0 "[movies]="moviesSlideShow"></app-slide-show>
+
+<h2>Peliculas</h2>
+
+<app-poster-grid *ngIf="movies.length > 0" [movies]="movies"></app-poster-grid>

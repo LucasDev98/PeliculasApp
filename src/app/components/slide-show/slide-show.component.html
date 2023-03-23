@@ -1,0 +1,24 @@
+<div class="swiper-container">
+  <swiper
+
+      [slidesPerView]="1"
+      [spaceBetween]="20"
+      [navigation]="true"
+      [autoplay]="true"
+      [loop]="true"
+    >
+      <ng-template swiperSlide *ngFor="let movie of movies" >
+
+        <div class="slider-content" [ngStyle]="{ 'background-size': 'cover', 'background-position': 'center,center','background-image': 'url(https://image.tmdb.org/t/p/w500'+movie.backdrop_path+')'}">
+
+            <div class="movie-description">
+              <h3> {{ movie.title }}</h3>
+              <p> {{ movie.overview | slice:0:160 }}</p>
+            </div>
+        </div>
+
+      </ng-template>
+
+</swiper>
+
+</div>

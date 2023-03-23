@@ -23,6 +23,7 @@ import { ComponentsModule } from './components/components.module';
     PagesModule,
     HttpClientModule,
     ComponentsModule,
+
     AppRoutingModule
   ],
   providers: [  ],

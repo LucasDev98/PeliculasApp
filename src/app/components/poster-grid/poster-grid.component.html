@@ -1,0 +1,18 @@
+
+
+<div class="row">
+  <div class="col-md-3 mb-5" *ngFor="let movie of movies">
+    <img  [src]="movie.poster_path | posterPipe" class="img-fluid" alt="imagen pelicula">
+    <div class="">
+        <h3 class="mt-2">{{ movie.title }}</h3>
+        <div class="row">
+            <div class="col-10 text-white">
+              <rating  style="color:#F7C04A;font-size: 18px;" [(ngModel)]="movie.vote_average" [max]="max" [readonly]="isReadonly"></rating>
+            </div>
+            <div class="col-2 text-white">
+                {{ movie.vote_average | number :'1.1-2'}}
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
