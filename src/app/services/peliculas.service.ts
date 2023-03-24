@@ -4,6 +4,9 @@ import { Injectable } from '@angular/core';
 import { CarteleraResponse, Movie } from '../interfaces/cartelera-response';
 import { Observable } from 'rxjs';
 import { tap, map } from 'rxjs/operators';
+import { MovieResponse } from '../interfaces/movie-response';
+
+import { CreditsResponse } from '../interfaces/credits-response';
 @Injectable({
   providedIn: 'root'
 })
@@ -41,5 +44,13 @@ export class PeliculasService {
               return data.results;
             })
           )
+  }
+
+  getPelicula( id : string ) : Observable<MovieResponse>{
+    return this.http.get<MovieResponse>(`${this.baseUrl}movie/${id}`, { params: this.params } );
+  }
+
+  getCredits( id : string ) : Observable <CreditsResponse> {
+    return this.http.get<CreditsResponse>(`${this.baseUrl}movie/${id}/credits`, { params: this.params })
   }
 }

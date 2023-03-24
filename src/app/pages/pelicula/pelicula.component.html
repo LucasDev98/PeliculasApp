@@ -1,1 +1,23 @@
-<p>pelicula works!</p>
+
+
+<div class="row mt-5">
+  <div class="col-6">
+      <img class="img-thumbnail" [src]="movie.backdrop_path | posterPipe" [alt]="movie.title">
+  </div>
+  <div class="col-6">
+    <h3>{{ movie.title }}</h3>
+    <div class="row">
+      <div class="col-12">
+        <rating  style="color:#F7C04A;font-size: 24px;" [(ngModel)]="movie.vote_average" [max]="10" [readonly]="false"></rating>
+        <p>{{ movie.vote_average | number : '1.1-1'}}</p>
+      </div>
+      <div class="col text-white">
+        {{ movie.overview | slice:60 | titlecase  }}
+        <button (click)="regresar()" class="btn btn-outline-info d-block mt-5"> Regresar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+
+</div>
